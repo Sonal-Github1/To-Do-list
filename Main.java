@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class app {
+public class Main {
     private ArrayList<String> tasks;
 
-    public app() {
+    public Main() {
         tasks = new ArrayList<>();
     }
 
@@ -31,13 +31,13 @@ public class app {
         }
     }
 
-    public static void main(String[] args) {
-        app app = new app();
+    public static void Main(String[] args) {
+        Main Main = new Main();
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
-            System.out.println("\nTodo List Application");
+            System.out.println("\nTodo List Mainlication");
             System.out.println("1. Add Task");
             System.out.println("2. Remove Task");
             System.out.println("3. Display Tasks");
@@ -50,17 +50,17 @@ public class app {
                 case 1:
                     System.out.print("Enter task to add: ");
                     String newTask = scanner.nextLine();
-                    app.addTask(newTask);
+                    Main.addTask(newTask);
                     System.out.println("Task added.");
                     break;
                 case 2:
                     System.out.print("Enter index of task to remove: ");
                     int indexToRemove = scanner.nextInt() - 1;
-                    app.removeTask(indexToRemove);
+                    Main.removeTask(indexToRemove);
                     System.out.println("Task removed.");
                     break;
                 case 3:
-                    app.displayTasks();
+                    Main.displayTasks();
                     break;
                 case 4:
                     running = false;
