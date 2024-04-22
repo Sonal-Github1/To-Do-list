@@ -33,8 +33,8 @@ public class ToDo {
         }
     }
 
-    public static void main(String[] args) {//this is where program start to execute
-        ToDo ToDo = new ToDo();//instance of todo class to get access to above methods
+    public static void main(String[] args) {// this is where program start to execute
+        ToDo ToDo = new ToDo();// instance of todo class to get access to above methods
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
@@ -45,25 +45,33 @@ public class ToDo {
             System.out.println("3. Display Tasks");
             System.out.println("4. Exit");
             System.out.print("Enter your choice (Num): ");
-            int choice = scanner.nextInt();//this use to get the input(index) from the user
+            int choice;
+
+        try {
+            choice = scanner.nextInt();
             scanner.nextLine();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+            scanner.nextLine();
+            continue; 
+        }
 
             switch (choice) {
                 case 1:
                     System.out.print("Enter task to add: ");
                     String newTask = scanner.nextLine();
-                    ToDo.addTask(newTask);//uses the addtask method
+                    ToDo.addTask(newTask);// uses the addtask method
                     System.out.println("Task added.");
                     break;
                 case 2:
                     System.out.print("Enter index of task to remove: ");
                     int indexToRemove = scanner.nextInt() - 1;
-                    ToDo.removeTask(indexToRemove);//uses the removetask method
+                    ToDo.removeTask(indexToRemove);// uses the removetask method
                     System.out.println("Task removed.");
                     break;
                 case 3:
                     ToDo.displayTasks();
-                    break;//uses the displaytask method
+                    break;// uses the displaytask method
                 case 4:
                     running = false;
                     System.out.println("Exiting...");
@@ -73,7 +81,6 @@ public class ToDo {
                     break;
             }
         }
-
         scanner.close();
     }
 }
