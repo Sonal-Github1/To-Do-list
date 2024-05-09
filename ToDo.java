@@ -7,7 +7,7 @@ public class ToDo {
     // why choose array list over nomal string array,becouse array list have no predefied limit like nomal array and array list have build in methods to minipulate data.
 
     public ToDo() {
-        tasks = new ArrayList<>();//this is a instance of above arraylist called tasks
+        tasks = new ArrayList<>();//this is a instance of above arraylist called tas
     }
 
     public void add(String task) {
@@ -28,7 +28,7 @@ public class ToDo {
         } else {
             System.out.println("Tasks:");
             for (int i = 0; i < tasks.size(); i++) {// .size condition iterate through all the objects inside the array list
-                System.out.println((i + 1) + ". " + tasks.get(i));//this built-in .get method use to display the previously added task
+                System.out.println((i + 1) + ". " + tasks.get(i)+ " - ");//this built-in .get method use to display the previously added task
             }
         }
     }//binaksha
@@ -79,6 +79,7 @@ public class ToDo {
                     System.out.println("Thank you for using me!");
                     System.out.println("Exiting...");
                     break;
+
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;
